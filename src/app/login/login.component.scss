@@ -1,0 +1,26 @@
+.parent{
+    width: 100vw;
+    height: 100vh;
+    background-color: teal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    text-align: center;
+}
+label{
+    display: inline-block;
+    width: 80px;
+}
+.child input{
+    padding: 20px;
+    margin-bottom: 10px;
+}
+button{
+    padding: 20px;
+    width: 30%;
+}

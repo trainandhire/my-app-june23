@@ -1,0 +1,42 @@
+.parent{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.left{
+    width: 20%;
+    height: 100%;
+    background-color: black;
+    text-align: center;
+    overflow: auto;
+}
+.left h1{
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+.left h2{
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+.left h2:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+.left button{
+    padding: 10px;
+    width: 80%;
+    background-color: red;
+    border: 0;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.right{
+    width: 80%;
+    height: 100%;
+    background-color: teal;
+    overflow: auto;
+}

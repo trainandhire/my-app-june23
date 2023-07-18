@@ -1,0 +1,44 @@
+<p>attribute-directives works!</p>
+
+<input type="text" [(ngModel)]="term" (keypress)="search()">
+<button (click)="add()">add 2 marks in science</button>
+<button (click)="sort()">science high to low marks</button>
+<button (click)="total()" >total science marks</button>
+
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>SNO</th>
+            <th>Name</th>
+            <th>Science</th>
+            <th>Math</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{student.name | uppercase}}</td>
+            <td [ngStyle]="{color: student.science>=35 ? 'green': 'red'}">{{student.science}}</td>
+            <td [ngClass]="{'pass':student.math>50, 'fail':student.math<35, 'second-class':student.math>=35 && student.math<=50}">
+                {{student.math}}
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="delete(i)">delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h1>{{today}}</h1>
+
+<h1>{{ today | date }}</h1>
+<h1>{{ today | date:'dd-MM-yyyy' }}</h1>
+<h1>{{ today | date:'dd/MM/yy' }}</h1>
+
+<h1>{{ today | date:'hh:mm:ss' }}</h1>
+
+<h1>{{ today | date:'full' }}</h1>
+<h1>{{ today | date:'medium' }}</h1>
+<h1>{{ today | date:'short' }}</h1>

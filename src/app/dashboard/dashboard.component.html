@@ -1,0 +1,21 @@
+<div class="parent">
+    <div class="left">
+        <h1>MY WEBSITE</h1>
+        <hr>
+        <h2 routerLink="home">Home</h2>
+        <h2 routerLink="info">Info</h2>
+        <h2 routerLink="variable">varaible</h2>
+        <h2 routerLink="interpolation">Interpolation</h2>
+        <h2 routerLink="eventbinding">Event binding</h2>
+        <h2 routerLink="twowaybinding">Two way binding</h2>
+        <h2 routerLink="calculator">calculator</h2>
+        <h2 routerLink="structural-directives">structural directives</h2>
+        <h2 routerLink="attribute-directives">attribute directives</h2>
+        <h2 routerLink="vehicle">vehicle</h2>
+        <h2 routerLink="create-vehicle">create vehicle</h2>
+        <button (click)="logout()">LOGOUT</button>
+    </div>
+    <div class="right">
+        <router-outlet></router-outlet>
+    </div>
+</div>
