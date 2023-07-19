@@ -52,6 +52,32 @@
         <input type="number" formControlName="hostelFee">
         <br>
     </div>
+
+    <button (click)="addCard()">add card</button>
+
+    <div formArrayName="cards">
+        <div *ngFor="let card of cardsFormArray.controls; let i=index">
+            <div formGroupName="{{i}}">
+                
+                <h1>card {{i+1}}</h1>
+
+                <label>no:</label>
+                <input type="number" formControlName="no">
+                <br>
+
+                <label>exp:</label>
+                <input type="month" formControlName="exp">
+                <br>
+
+                <label>cvv:</label>
+                <input type="number" formControlName="cvv">
+                <br>
+
+                <button (click)="deleteCard(i)">delete</button>
+
+            </div>
+        </div>
+    </div>
  
     <button class="btn btn-warning" (click)="submit()">submit</button>
 
