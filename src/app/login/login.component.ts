@@ -22,7 +22,7 @@ export class LoginComponent{
 
     this.loginService.doLogin(this.loginForm.value).subscribe(
       (data:any)=>{
-        this.router.navigateByUrl('www.fb.com');
+        this.router.navigateByUrl('/dashboard');
         localStorage.setItem('token',data.token);
       },
       (err:any)=>{

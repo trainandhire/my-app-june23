@@ -16,6 +16,7 @@ import { VehicleComponent } from './vehicle/vehicle.component';
 import { ActivityComponent } from './activity/activity.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -31,7 +32,8 @@ const routes: Routes = [
     {path:'attribute-directives', component: AttributeDirectivesComponent},
     {path:'vehicle', component: VehicleComponent},
     {path:'create-vehicle', component: CreateVehicleComponent},
-    {path:'activity', component: ActivityComponent}
+    {path:'activity', component: ActivityComponent},
+    {path:'create-user', component: CreateUserComponent}
   ]},
   {path:'',component:LoginComponent},
   {path:'**',component:PagenotfoundComponent}

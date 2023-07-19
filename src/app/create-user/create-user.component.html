@@ -1,0 +1,23 @@
+<h1>Create User Form</h1>
+
+<form [formGroup]="userForm">
+
+    <label>Name:</label>
+    <input type="text" formControlName="name">
+    <br>
+
+    <label>Age:</label>
+    <input type="number" formControlName="age">
+    <br>
+
+    <label>Phone:</label>
+    <input type="number" formControlName="phone">
+    <br>
+
+    <label>Email:</label>
+    <input type="email" formControlName="email">
+    <br>
+
+    <button class="btn btn-warning" (click)="submit()">submit</button>
+
+</form>
