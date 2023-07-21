@@ -469,6 +469,41 @@ Angular has two type of forms
 
         5) Whenever submit, check the form value in console.
 
+    5) FormValidations:
+    -------------------
+
+        TS:
+        ---
+            age: new FormGroup('',[Validators.required])
+
+        HTML:
+        -----
+            <div *ngIf="_______.invalid && ______.touched">
+
+                <p *ngIf="_______.errors?.['required]"> This field is requried </p>
+
+            </div>
+
+
+            1) Form Group:              userForm.get('age')?
+
+            2) Nested Form Group:       userForm.get('address')?.get('pin')?
+
+            3) Form Array:              cardsFormArray.controls[i]?.get('cvv')?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 GIT:
 ----

@@ -4,18 +4,43 @@
 
     <label>Name:</label>
     <input type="text" formControlName="name">
+    <div class="text text-danger" *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
+        <p *ngIf="userForm.get('name')?.errors?.['required'] ">This field is required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['minlength'] ">Min 3 chars required.</p>
+    </div>
+
+    <!-- <h5>touched: {{userForm.get('name')?.touched}}</h5>
+    <h5>untouched: {{userForm.get('name')?.untouched}}</h5>    
+    <h5>dirty: {{userForm.get('name')?.dirty}}</h5>
+    <h5>pristine: {{userForm.get('name')?.pristine}}</h5>
+    <h5>valid: {{userForm.get('name')?.valid}}</h5>
+    <h5>invalid: {{userForm.get('name')?.invalid}}</h5> -->
     <br>
 
     <label>Age:</label>
     <input type="number" formControlName="age">
+    <div class="text text-danger" *ngIf="userForm.get('age')?.invalid && userForm.get('age')?.touched">
+        <p *ngIf="userForm.get('age')?.errors?.['required'] ">Age is required</p>
+        <p *ngIf="userForm.get('age')?.errors?.['min'] ">Min 0 years.</p>
+        <p *ngIf="userForm.get('age')?.errors?.['max'] ">Max 100 years only.</p>
+    </div>
     <br>
 
     <label>Phone:</label>
     <input type="number" formControlName="phone">
+    <div class="text text-danger" *ngIf="userForm.get('phone')?.invalid && userForm.get('phone')?.touched">
+        <p *ngIf="userForm.get('phone')?.errors?.['required'] ">phone is required</p>
+        <p *ngIf="userForm.get('phone')?.errors?.['min'] ">Phone no should be 10 digits</p>
+        <p *ngIf="userForm.get('phone')?.errors?.['max'] ">Phone no should be 10 digits</p>
+    </div>
     <br>
 
     <label>Email:</label>
     <input type="email" formControlName="email">
+    <div class="text text-danger" *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+        <p *ngIf="userForm.get('email')?.errors?.['required'] ">email is required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['email'] ">Invalid email</p>
+    </div>
     <br>
 
     <div formGroupName="address">
@@ -26,6 +51,10 @@
 
         <label>state:</label>
         <input type="text" formControlName="state">
+        <div class="text text-danger" *ngIf="userForm.get('address')?.get('state')?.invalid && userForm.get('address')?.get('state')?.touched">
+            <p *ngIf="userForm.get('address')?.get('state')?.errors?.['required'] ">state is required</p>
+            <p *ngIf="userForm.get('address')?.get('state')?.errors?.['minlength'] ">Min 3 chars required</p>
+        </div>
         <br>
 
         <label>pin:</label>
@@ -63,6 +92,9 @@
 
                 <label>no:</label>
                 <input type="number" formControlName="no">
+                <div *ngIf="cardsFormArray.controls[i].get('no')?.invalid && cardsFormArray.controls[i].get('no')?.touched">
+                    <p *ngIf="cardsFormArray.controls[i].get('no')?.errors?.['required']">no is requried</p>
+                </div>
                 <br>
 
                 <label>exp:</label>
