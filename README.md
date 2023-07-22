@@ -511,7 +511,7 @@ GIT:
 1) System one time setup (linking website to system)
 
     git config --global user.name ""
-
+ 
     git config --global user.email ""
 
 2) Project one time setup (linking project with git repository)

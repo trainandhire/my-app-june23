@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ActivityComponent } from './activity/activity.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
     VehicleComponent,
     ActivityComponent,
     CreateVehicleComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    VehicleDetailsComponent
   ],
   imports: [
     BrowserModule,

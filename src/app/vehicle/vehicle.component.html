@@ -42,23 +42,10 @@
             </td>
             <td>{{ vehicle.id }}</td>
             <td>
+                <button (click)="edit(vehicle.id)" class="btn btn-info">edit</button>
+                <button (click)="view(vehicle.id)" class="btn btn-warning">view</button>
                 <button (click)="deleteVehicle(vehicle.id)" class="btn btn-danger">delete</button>
             </td>
         </tr>
     </tbody>
 </table>
-
-
-
-<!-- <div class="row">
-
-    <div style="border: 2px solid red" class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let vehicle of vehicles">
-        <img src="{{ vehicle.image }}" alt="" width="100px" height="100px">
-        <h6>Vehicle: {{ vehicle.Vehicle }}</h6>
-        <h6>Manufacture: {{ vehicle.manufacturer }}</h6>
-        <h6>Model: {{ vehicle.model }}</h6>
-    </div>
-
-
-</div>
--->

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { VehicleService } from '../vehicle.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-vehicle',
@@ -19,19 +20,56 @@ export class CreateVehicleComponent{
     image: new FormControl()
   });
 
-  constructor(private vehicleService:VehicleService){}
+  public id:any = "";
+
+  constructor(private vehicleService:VehicleService,private activatedRoute: ActivatedRoute){
+
+    activatedRoute.params.subscribe(
+      (data:any)=>{
+        this.id = data.id;
+
+        vehicleService.getVehicle(this.id).subscribe(
+          (data:any)=>{
+            this.vehicleForm.patchValue(data);
+          }
+        )
+
+      }
+    )
+
+  }
 
   submit(){
     console.log( this.vehicleForm.value );
+  
+    if(this.id?.length>0){
 
-    this.vehicleService.createVehicle(this.vehicleForm.value).subscribe(
-      (data:any)=>{
-        alert("Vehicle created successfully");
-      },
-      (err:any)=>{
-        alert("Vehicle creation failed");
-      }
-    )
+      // update
+      this.vehicleService.updateVehicle(this.id, this.vehicleForm.value).subscribe(
+        (data:any)=>{
+          alert("Vehicle updated successfully");
+        },
+        (err:any)=>{
+          alert("Vehicle updattion failed");
+        }
+      )
+
+    }
+    else{
+      
+      // create
+      this.vehicleService.createVehicle(this.vehicleForm.value).subscribe(
+        (data:any)=>{
+          alert("Vehicle created successfully");
+        },
+        (err:any)=>{
+          alert("Vehicle creation failed");
+        }
+      )
+
+    }
+
+
 
   }
 
