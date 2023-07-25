@@ -581,8 +581,19 @@ GIT:
 
 
 
+3. Custom API:
+--------------
 
+    1) Create json file in assets
 
+        [
+            {},
+            {}
+        ]
+
+    2) Do api get call to that file
+
+        this.httpClient.get("/assets/products.json");
 
 
 
