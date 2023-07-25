@@ -557,7 +557,27 @@ GIT:
 
 
 
+2. custom directive:
+--------------------
 
+    1) create:
+    ----------
+
+        ng g d imp
+
+    2) implement:
+    -------------
+
+        constructor(private elementRef: ElementRef){
+
+            elementRef.nativeElement.style.color = 'red';
+
+        }
+
+    3) apply:
+    ---------
+    
+        <h1  appImp> calculator </h1>
 
 
 
