@@ -22,6 +22,8 @@ import { ActivityComponent } from './activity/activity.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { PricePipe } from './price.pipe';
+import { AgePipe } from './age.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
     ActivityComponent,
     CreateVehicleComponent,
     CreateUserComponent,
-    VehicleDetailsComponent
+    VehicleDetailsComponent,
+    PricePipe,
+    AgePipe
   ],
   imports: [
     BrowserModule,

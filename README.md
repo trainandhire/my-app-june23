@@ -498,13 +498,6 @@ Angular has two type of forms
 
 
 
-
-
-
-
-
-
-
 GIT:
 ----
 
@@ -531,9 +524,36 @@ GIT:
 
 
 
+<!-- Customs:
+
+1) custom pipe
+2) custom directive
+3) custom data type
+4) custom validator
+5) Interceptor -->
 
 
 
+
+1. Custom Pipe:
+---------------
+
+    1) create:
+    ----------
+
+        ng g p price
+
+    2) Implement:
+    ------------
+
+        transform(value,...args){
+            return "Rs." + value + "/-";
+        }
+
+    3) Apply:
+    ---------
+
+        {{ product.price | price }}
 
 
 
