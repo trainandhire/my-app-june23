@@ -597,6 +597,28 @@ GIT:
 
 
 
+4. custom data type / custom interface / custom model
+-----------------------------------------------------
+
+    1. create:
+    ----------
+
+        ng g i product
+
+
+    2. implement:
+    -------------
+
+        export interface Product{
+            name: string;
+            age:number;
+        }
+
+    3. apply:
+    ---------
+        public products: Product[] = [];
+
+        public product:Product = <Product>{};
 
 
 
