@@ -622,6 +622,116 @@ GIT:
 
 
 
+Component Communication:
+------------------------
+
+    Three ways
+
+        1) parent to child
+        2) child to parent
+        3) sibling communication
+
+    1) parent to child:
+    -------------------
+
+        child.ts
+        --------
+
+            @Input public ac:number = 0;
+
+        parent.html
+        -----------
+
+            <app-child [ac]="10"></app-child> 
+
+
+    2) child to parent:
+    --------------------
+
+        child.ts
+        --------
+
+            @Output() public bEvent:EventEmitter<any> = new EventEmitter();
+
+
+            send(){
+                this.bEvent.emit(20);
+            }        
+
+
+        parent.html:
+        ------------
+
+            <app-child (bEvent)="catch($event)"></app-child>
+
+
+
+    parent to child
+    child to parent
+    -----------------
+
+
+        parent.html:
+        ------------
+
+            <app-child [ac]="10" (bEvent)="catch($event)"></app-child>
+
+
+        child.ts:
+        ---------
+
+            @Input public ac:number = 0;
+
+            @Output() public bEvent:EventEmitter<any> = new EventEmitter();
+            this.bEvent.emit(20);
+
+
+
+
+
+    3) Sibling communication:
+    -------------------------
+
+        1) Create common service and inject in all the components.
+        2) Create subject in service with setValue and getValue methods.
+        3) From item call the setValue, nav and cart will get the value.
+
+
+        create:
+        -------
+            public countSub:BehaviorSubject<any> = new BehaviorSubject(0);
+
+        set:
+        ----
+            setValue(){
+                this.countSub.next(this.count++);
+            }
+
+        get:
+        ----
+            getValue(){
+                return this.countSub.asObservable();
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
