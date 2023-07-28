@@ -714,6 +714,43 @@ Component Communication:
             }
 
 
+Module Communiation:
+---------------------
+
+    1) Eager loading
+    2) Lazy loading
+    3) Pre loading
+
+
+    1) Eager loading
+    ----------------
+
+        1) export the components from feature module
+
+            exports:[ AboutCeoComponent ]
+
+        2) import feature module in app amodule
+
+            imports: [AboutModule]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

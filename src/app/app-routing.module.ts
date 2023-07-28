@@ -52,6 +52,10 @@ const routes: Routes = [
     {path:'cart', component: CartComponent},
     {path:'about-ceo', component: AboutCeoComponent},
     {path:'about-company', component: AboutCompanyComponent},
+    {
+      path: 'contact',
+      loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+    }
   ]},
   {path:'',component:LoginComponent},
   {path:'**',component:PagenotfoundComponent}
